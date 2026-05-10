@@ -270,6 +270,7 @@ export default function CityPricePage() {
           style={{
             background: darkMode ? "#1f2937" : "#fff",
             border: `1px solid ${darkMode ? "#374151" : "#e5e7eb"}`,
+            borderRadius: 10,
             padding: "16px 20px",
             boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
             width: "100%",

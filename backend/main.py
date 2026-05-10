@@ -138,6 +138,62 @@ def generate_minute_prices_by_city():
         print(f"Exception occurred while generating minute prices: {str(e)}")
         return {"error": str(e)}
 
+def generate_integer_values_by_city():
+    """
+    Generate per-minute integer values (1-100) for a full day from 8 city sources
+    Useful for representing demand levels, capacity, or other metrics
+    """
+    import random
+    from datetime import datetime, timezone
+    
+    cities = [
+        "Lisbon",
+        "Porto",
+        "Faro",
+        "Coimbra",
+        "Braga",
+        "Bragança",
+        "Leiria",
+        "Guarda"
+    ]
+    
+    try:
+        now = datetime.now(timezone.utc)
+        date_part = now.strftime("%Y-%m-%d")
+        
+        # Generate integer values for each city
+        values_by_city = {}
+        
+        for city in cities:
+            city_values = {}
+            
+            # Generate 1440 minutes (24 hours * 60 minutes)
+            for hour in range(24):
+                for minute in range(60):
+                    time_key = f"{hour:02d}:{minute:02d}"
+                    
+                    # Generate random integer from 1 to 100
+                    value = random.randint(1, 100)
+                    
+                    city_values[time_key] = str(value)
+            
+            values_by_city[city] = city_values
+        
+        # Format the response
+        result = {
+            "date": date_part,
+            "interval": "per_minute",
+            "sources": values_by_city,
+            "note": "Per-minute integer values (1-100) from 8 Portuguese cities"
+        }
+        
+        print(f"Successfully generated integer values for {len(cities)} cities")
+        return result
+        
+    except Exception as e:
+        print(f"Exception occurred while generating integer values: {str(e)}")
+        return {"error": str(e)}
+
 # OMIE API endpoint (Iberian Market - Spain & Portugal)
 OMIE_API_URL = "https://www.omie.es/en/file-download"
 
@@ -320,7 +376,7 @@ if __name__ == "__main__":
     weather_data = get_porto_weather()
     
     # Save weather data to frontend data folder
-    weather_output_path = "../frontend/src/app/data/weather.json"
+    weather_output_path = "../frontend/src/app/data/porto_weather.json"
     
     with open(weather_output_path, 'w', encoding='utf-8') as f:
         json.dump(weather_data, f, indent=2, ensure_ascii=False)
@@ -332,7 +388,7 @@ if __name__ == "__main__":
     price_data = get_omie_prices()
     
     # Save price data to frontend data folder
-    price_output_path = "../frontend/src/app/data/price.json"
+    price_output_path = "../frontend/src/app/data/maket_price.json"
     
     with open(price_output_path, 'w', encoding='utf-8') as f:
         json.dump(price_data, f, indent=2, ensure_ascii=False)
@@ -350,4 +406,16 @@ if __name__ == "__main__":
         json.dump(minute_prices, f, indent=2, ensure_ascii=False)
     
     print(f"City minute prices saved to {minute_prices_path}")
+    
+    # Generate integer values by city
+    print("\nGenerating integer values (1-100) by city...")
+    integer_values = generate_integer_values_by_city()
+    
+    # Save integer values to frontend data folder
+    integer_values_path = "../frontend/src/app/data/city_order.json"
+    
+    with open(integer_values_path, 'w', encoding='utf-8') as f:
+        json.dump(integer_values, f, indent=2, ensure_ascii=False)
+    
+    print(f"City integer values saved to {integer_values_path}")
     print("\nAll data fetched and saved successfully!")

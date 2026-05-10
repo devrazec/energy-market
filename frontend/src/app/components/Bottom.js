@@ -19,8 +19,8 @@ const navItems = [
     { text: 'Home', icon: <HomeIcon />, href: '/' },
     { text: 'Location', icon: <MapIcon />, href: '/pages/Location' },
     { text: 'Historical', icon: <HistoryIcon />, href: '/pages/Historical' },
-    { text: 'Weather', icon: <WbCloudyIcon />, href: '/pages/Weather' },
-    { text: 'Market Price', icon: <ShowChartIcon />, href: '/pages/Price' },
+    { text: 'Porto Weather', icon: <WbCloudyIcon />, href: '/pages/PortoWeather' },
+    { text: 'Market Price', icon: <ShowChartIcon />, href: '/pages/MarketPrice' },
     { text: 'City Price', icon: <ShowChartIcon />, href: '/pages/CityPrice' },
 ];
 

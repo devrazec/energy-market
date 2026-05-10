@@ -5,25 +5,25 @@ import { GlobalContext } from "../../context/GlobalContext";
 import Layout from "../../components/Layout";
 import ReactECharts from "echarts-for-react";
 
-export default function PricePage() {
+export default function MarketPricePage() {
   const {
     darkMode,
     setDarkMode,
     mobileDevice,
     setMobileDevice,
-    dbPrice,
-    setDbPrice,
+    dbMarketPrice,
+    setDbMarketPrice,
   } = useContext(GlobalContext);
 
   const chartOption = useMemo(() => {
-    if (!dbPrice || !dbPrice.prices) {
+    if (!dbMarketPrice || !dbMarketPrice.prices) {
       return {};
     }
 
     const isMobile = !!mobileDevice;
     
     // Parse the new structure: prices is an object with days as keys
-    const pricesData = dbPrice.prices;
+    const pricesData = dbMarketPrice.prices;
     const days = Object.keys(pricesData).sort();
     
     // Get all unique hours from all days
@@ -130,7 +130,7 @@ export default function PricePage() {
     return {
       backgroundColor: 'transparent',
       title: {
-        text: `Electricity Prices - ${dbPrice.source || 'aWATTar'} (${dbPrice.market || 'Austria'})`,
+        text: `Electricity Prices - ${dbMarketPrice.source || 'aWATTar'} (${dbMarketPrice.market || 'Austria'})`,
         left: 'center',
         textStyle: {
           color: darkMode ? '#fff' : '#000',
@@ -212,7 +212,7 @@ export default function PricePage() {
       ],
       series: series
     };
-  }, [dbPrice, darkMode, mobileDevice]);
+  }, [dbMarketPrice, darkMode, mobileDevice]);
 
   return (
     <Layout>
@@ -228,6 +228,7 @@ export default function PricePage() {
           style={{
             background: darkMode ? "#1f2937" : "#fff",
             border: `1px solid ${darkMode ? "#374151" : "#e5e7eb"}`,
+            borderRadius: 10,
             padding: "16px 20px",
             boxShadow: "0 1px 4px rgba(0,0,0,0.06)",
             width: "100%",
