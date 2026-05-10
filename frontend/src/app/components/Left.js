@@ -14,6 +14,7 @@ import { GlobalContext } from '../context/GlobalContext';
 import HomeIcon from '@mui/icons-material/Home';
 import MapIcon from '@mui/icons-material/Map';
 import HistoryIcon from '@mui/icons-material/History';
+import WbCloudyIcon from '@mui/icons-material/WbCloudy';
 
 const DRAWER_WIDTH = 240;
 
@@ -21,6 +22,7 @@ const mainNavItems = [
     { text: 'Home', icon: <HomeIcon />, href: '/' },
     { text: 'Location', icon: <MapIcon />, href: '/pages/Location' },
     { text: 'Historical', icon: <HistoryIcon />, href: '/pages/Historical' },
+    { text: 'Weather', icon: <WbCloudyIcon />, href: '/pages/Weather' },
 
 ];
 

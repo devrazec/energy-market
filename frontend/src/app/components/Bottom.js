@@ -12,11 +12,13 @@ import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import HomeIcon from '@mui/icons-material/Home';
 import MapIcon from '@mui/icons-material/Map';
 import HistoryIcon from '@mui/icons-material/History';
+import WbCloudyIcon from '@mui/icons-material/WbCloudy';
 
 const navItems = [
     { text: 'Home', icon: <HomeIcon />, href: '/' },
     { text: 'Location', icon: <MapIcon />, href: '/pages/Location' },
     { text: 'Historical', icon: <HistoryIcon />, href: '/pages/Historical' },
+    { text: 'Weather', icon: <WbCloudyIcon />, href: '/pages/Weather' },
 ];
 
 export default function Bottom() {

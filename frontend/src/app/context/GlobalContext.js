@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useState, useEffect } from 'react';
-import tomorrowJson from '../data/tomorrow.json';
+import weatherJson from '../data/weather.json';
 
 export const GlobalContext = createContext();
 
@@ -9,7 +9,7 @@ export function GlobalProvider({ children }) {
   const [darkMode, setDarkMode] = useState(false);
   const [mobileDevice, setMobileDevice] = useState(false);
   const [currentUrl, setCurrentUrl] = useState('/');
-  const [dbTomorrow, setDbTomorrow] = useState(tomorrowJson);
+  const [dbWeather, setDbWeather] = useState(weatherJson);
 
   return (
     <GlobalContext.Provider
@@ -20,8 +20,8 @@ export function GlobalProvider({ children }) {
         setMobileDevice,
         currentUrl,
         setCurrentUrl,
-        dbTomorrow,
-        setDbTomorrow,
+        dbWeather,
+        setDbWeather,
 
       }}
     >
