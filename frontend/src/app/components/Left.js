@@ -15,6 +15,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import MapIcon from '@mui/icons-material/Map';
 import HistoryIcon from '@mui/icons-material/History';
 import WbCloudyIcon from '@mui/icons-material/WbCloudy';
+import ShowChartIcon from '@mui/icons-material/ShowChart';
 
 const DRAWER_WIDTH = 240;
 
@@ -23,7 +24,8 @@ const mainNavItems = [
     { text: 'Location', icon: <MapIcon />, href: '/pages/Location' },
     { text: 'Historical', icon: <HistoryIcon />, href: '/pages/Historical' },
     { text: 'Weather', icon: <WbCloudyIcon />, href: '/pages/Weather' },
-
+    { text: 'Market Price', icon: <ShowChartIcon />, href: '/pages/Price' },
+    { text: 'City Price', icon: <ShowChartIcon />, href: '/pages/CityPrice' },
 ];
 
 export default function Left() {

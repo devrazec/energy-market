@@ -23,6 +23,7 @@ npm i -S @fontsource/roboto
 npm i -S @mui/icons-material
 npm i -S echarts-for-react
 npm i -S echarts
+npm i -S socket.io-client
 
 npm i -D gh-pages
 
@@ -50,6 +51,7 @@ python3 -m venv venv
 . venv/bin/activate
 pip install requests
 pip install dotenv
+pip install flask_socketio
 pip freeze > requirements.txt
 python3 main.py
 
