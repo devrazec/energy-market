@@ -26,6 +26,11 @@ npm i -S echarts
 
 npm i -D gh-pages
 
+-- Create Files
+
+gh-pages/.nojekyll
+gh-pages/_next/.nojekyll
+
 -- Create Global React Context
 
 -- Commands

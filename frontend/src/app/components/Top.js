@@ -20,6 +20,11 @@ import { usePathname } from 'next/navigation';
 
 export default function Top() {
   const { darkMode, setDarkMode, mobileDevice, currentUrl, setCurrentUrl } = useContext(GlobalContext);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    setCurrentUrl(pathname);
+  }, [pathname, setCurrentUrl]);
 
   return (
     <AppBar
