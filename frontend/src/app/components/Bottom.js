@@ -10,29 +10,13 @@ import IconButton from '@mui/material/IconButton';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import HomeIcon from '@mui/icons-material/Home';
-import MicIcon from '@mui/icons-material/Mic';
-import MenuBookIcon from '@mui/icons-material/MenuBook';
-import EditIcon from '@mui/icons-material/Edit';
-import HeadphonesIcon from '@mui/icons-material/Headphones';
-import EventOutlinedIcon from '@mui/icons-material/EventOutlined';
-import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
-import TodayOutlinedIcon from '@mui/icons-material/TodayOutlined';
-import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined';
-import DateRangeOutlinedIcon from '@mui/icons-material/DateRangeOutlined';
+import MapIcon from '@mui/icons-material/Map';
+import HistoryIcon from '@mui/icons-material/History';
 
 const navItems = [
     { text: 'Home', icon: <HomeIcon />, href: '/' },
-    { text: 'Tomorrow', icon: <CalendarTodayOutlinedIcon />, href: '/pages/Tomorrow' },
-    { text: 'Today', icon: <TodayOutlinedIcon />, href: '/pages/Today' },
-    { text: 'Yesterday', icon: <EventOutlinedIcon />, href: '/pages/Yesterday' },
-    { text: 'Week', icon: <DateRangeOutlinedIcon />, href: '/pages/Week' },
-    { text: 'Month', icon: <CalendarMonthOutlinedIcon />, href: '/pages/Month' },
-    { text: 'Grouped Day', icon: <TodayOutlinedIcon />, href: '/pages/GroupedDay' },
-    { text: 'Grouped Month', icon: <CalendarMonthOutlinedIcon />, href: '/pages/GroupedMonth' },
-    { text: 'Grouped Year', icon: <CalendarMonthOutlinedIcon />, href: '/pages/GroupedYear' },
-    { text: 'One Day', icon: <TodayOutlinedIcon />, href: '/pages/OneDay' },
-    { text: 'One Month', icon: <CalendarMonthOutlinedIcon />, href: '/pages/OneMonth' },
-    { text: 'One Year', icon: <CalendarMonthOutlinedIcon />, href: '/pages/OneYear' },
+    { text: 'Location', icon: <MapIcon />, href: '/pages/Location' },
+    { text: 'Historical', icon: <HistoryIcon />, href: '/pages/Historical' },
 ];
 
 export default function Bottom() {
