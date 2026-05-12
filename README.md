@@ -51,7 +51,6 @@ python3 -m venv venv
 . venv/bin/activate
 pip install requests
 pip install dotenv
-pip install flask_socketio
 pip freeze > requirements.txt
 python3 main.py
 
