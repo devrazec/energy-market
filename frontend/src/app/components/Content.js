@@ -15,7 +15,7 @@ const BOTTOM_NAV_HEIGHT = 56;
 
 const PAGES = [
   { title: 'Historical',    href: '/pages/Historical',     img: '/energy-market/pic3.jpg' },
-  { title: 'Location',      href: '/pages/Location',       img: '/energy-market/pic4.jpg' },
+  { title: 'Location',      href: '/pages/Location',       img: '/energy-market/pic2.jpg' },
   { title: 'Market Price',  href: '/pages/MarketPrice',    img: '/energy-market/pic5.jpg' },
   { title: 'Porto Weather', href: '/pages/PortoWeather',   img: '/energy-market/pic4.jpg' },
 ];

@@ -3,6 +3,8 @@
 A real-time energy market visualization platform that displays electricity prices across Portugal, featuring minute-by-minute pricing data from multiple cities and historical market trends.
 
 ![Energy Market Simulator](frontend/public/pic1.jpg)
+![Energy Market Location](frontend/public/pic2.jpg)
+
 
 ## 🔗 Links
 
