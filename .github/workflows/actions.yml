@@ -49,7 +49,7 @@ jobs:
       - name: install frontend dependencies
         run: |
           cd frontend
-          npm ci
+          npm install
           
       - name: build frontend
         run: |
