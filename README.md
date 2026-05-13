@@ -36,9 +36,7 @@ The Energy Market Simulator is a full-stack web application that provides intera
 ## Technology Stack
 
 ### Backend
-- **Python 3** with Flask
-- **Flask-SocketIO** for real-time updates
-- **Flask-CORS** for cross-origin resource sharing
+- **Python 3**
 - **Requests** for OMIE data fetching
 - Real-time data generation and aggregation
 
@@ -57,7 +55,6 @@ The application follows a client-server architecture:
    - Fetches hourly electricity prices from OMIE API
    - Generates minute-by-minute price simulations with regional multipliers
    - Serves JSON data for multiple cities
-   - Provides WebSocket support for real-time updates
 
 2. **Frontend** (`/frontend`): Next.js application that:
    - Displays interactive charts and visualizations
@@ -91,7 +88,7 @@ energy-market/
 
 ### Prerequisites
 - Python 3.x
-- Node.js 18+ and npm
+- Node.js 19+ and npm
 
 ### Backend Setup
 
@@ -111,12 +108,10 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Run the Flask server:
+4. Run the Server:
 ```bash
 python3 main.py
 ```
-
-The backend will start on the default Flask port (typically 5000).
 
 ### Frontend Setup
 
