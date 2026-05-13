@@ -1,4 +1,4 @@
-name: Update Weather Data Hourly
+name: Update Data and Deploy Frontend
 
 on:
   schedule:
@@ -39,4 +39,26 @@ jobs:
         uses: ad-m/github-push-action@v0.6.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main 
+          branch: main
+          
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          
+      - name: install frontend dependencies
+        run: |
+          cd frontend
+          npm ci
+          
+      - name: build frontend
+        run: |
+          cd frontend
+          npm run build
+          
+      - name: deploy to github pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./frontend/out
+          publish_branch: gh-pages
