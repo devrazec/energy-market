@@ -5,7 +5,7 @@ import { GlobalContext } from "../../context/GlobalContext";
 import Layout from "../../components/Layout";
 import ReactECharts from "echarts-for-react";
 
-export default function WeatherPage() {
+export default function PortoWeatherPage() {
   const {
     darkMode,
     setDarkMode,
