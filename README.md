@@ -4,6 +4,7 @@ A real-time energy market visualization platform that displays electricity price
 
 ![Energy Market Simulator](frontend/public/pic1.jpg)
 ![Energy Market Location](frontend/public/pic2.jpg)
+![Energy Market Weather](frontend/public/pic5.jpg)
 
 
 ## 🔗 Links
@@ -28,6 +29,11 @@ The Energy Market Simulator is a full-stack web application that provides intera
   - Leiria
   - Guarda (mountain region)
 - **Historical Data Visualization**: Multi-day price comparison with interactive charts
+- **Interactive Map**: Real-time price visualization on an interactive map of Portugal using Leaflet
+  - Dynamic price markers for all 8 cities
+  - Animated playback with minute-by-minute price changes
+  - Click and hover interactions on geographic regions
+  - Color-coded city boundaries
 - **Weather Integration**: Porto weather data correlation with energy prices
 - **Interactive Charts**: Built with ECharts for smooth, responsive visualizations
 - **Dark Mode Support**: Toggle between light and dark themes
@@ -44,6 +50,10 @@ The Energy Market Simulator is a full-stack web application that provides intera
 - **Next.js 15** (React 19) with App Router
 - **Material-UI (MUI)** for component library
 - **ECharts** for data visualization
+- **Leaflet** with React-Leaflet for interactive maps
+  - Dynamic price markers with real-time updates
+  - GeoJSON layers for city/district boundaries
+  - Custom map controls and animations
 - **Emotion** for CSS-in-JS styling
 - **Context API** for state management
 
@@ -58,6 +68,7 @@ The application follows a client-server architecture:
 
 2. **Frontend** (`/frontend`): Next.js application that:
    - Displays interactive charts and visualizations
+   - Renders interactive maps with Leaflet for geographic price visualization
    - Manages global state with React Context
    - Provides multiple views: Market Price, City Price, Historical, Location, Porto Weather
    - Supports responsive layout with mobile optimization
@@ -73,9 +84,9 @@ energy-market/
 ├── frontend/
 │   ├── src/
 │   │   └── app/
-│   │       ├── components/  # Layout components
+│   │       ├── components/  # Layout & map components
 │   │       ├── context/     # Global state management
-│   │       ├── data/        # JSON data files
+│   │       ├── data/        # JSON data files & GeoJSON
 │   │       └── pages/       # Application pages
 │   ├── package.json        # Node dependencies
 │   ├── next.config.mjs     # Next.js configuration
@@ -125,6 +136,13 @@ cd frontend
 npm install
 ```
 
+This will install all required packages including:
+- Next.js and React
+- Material-UI components
+- ECharts for data visualization
+- Leaflet and React-Leaflet for interactive maps
+- GeoJSON data for Portugal's geographic boundaries
+
 3. Run the development server:
 ```bash
 npm run dev
@@ -160,7 +178,13 @@ Real-time minute-by-minute price simulation for all 8 cities with animated playb
 Historical price trends and comparative analysis across different time periods.
 
 ### Location
-Geographic visualization of price distribution across Portuguese cities.
+Interactive map visualization powered by Leaflet displaying:
+- Real-time electricity prices for all 8 Portuguese cities
+- Color-coded price markers that update dynamically
+- Animated playback with play/pause controls and time slider
+- Geographic district boundaries with click-to-zoom functionality
+- Hover interactions showing detailed price information
+- Visual legend indicating city-specific color coding
 
 ### Porto Weather
 Weather data correlation with energy consumption and pricing patterns.
