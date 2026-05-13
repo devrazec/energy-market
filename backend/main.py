@@ -376,7 +376,10 @@ if __name__ == "__main__":
     weather_data = get_porto_weather()
     
     # Save weather data to frontend data folder
-    weather_output_path = "../frontend/src/app/data/porto_weather.json"
+    # Use path relative to script location to work both locally and in CI
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    base_dir = os.path.dirname(script_dir)
+    weather_output_path = os.path.join(base_dir, "frontend/src/app/data/porto_weather.json")
     
     with open(weather_output_path, 'w', encoding='utf-8') as f:
         json.dump(weather_data, f, indent=2, ensure_ascii=False)
@@ -388,7 +391,7 @@ if __name__ == "__main__":
     price_data = get_omie_prices()
     
     # Save price data to frontend data folder
-    price_output_path = "../frontend/src/app/data/maket_price.json"
+    price_output_path = os.path.join(base_dir, "frontend/src/app/data/maket_price.json")
     
     with open(price_output_path, 'w', encoding='utf-8') as f:
         json.dump(price_data, f, indent=2, ensure_ascii=False)
@@ -400,7 +403,7 @@ if __name__ == "__main__":
     minute_prices = generate_minute_prices_by_city()
     
     # Save minute prices to frontend data folder
-    minute_prices_path = "../frontend/src/app/data/city_price.json"
+    minute_prices_path = os.path.join(base_dir, "frontend/src/app/data/city_price.json")
     
     with open(minute_prices_path, 'w', encoding='utf-8') as f:
         json.dump(minute_prices, f, indent=2, ensure_ascii=False)
@@ -412,7 +415,7 @@ if __name__ == "__main__":
     integer_values = generate_integer_values_by_city()
     
     # Save integer values to frontend data folder
-    integer_values_path = "../frontend/src/app/data/city_order.json"
+    integer_values_path = os.path.join(base_dir, "frontend/src/app/data/city_order.json")
     
     with open(integer_values_path, 'w', encoding='utf-8') as f:
         json.dump(integer_values, f, indent=2, ensure_ascii=False)
