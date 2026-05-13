@@ -237,33 +237,30 @@ export default function HistoricalPage() {
           background: darkMode ? "#111827" : "#f9fafb",
         }}
       >
-        {/* Title */}
-        {/* <div
-          style={{
-            fontSize: "28px",
-            fontWeight: 700,
-            color: darkMode ? "#f9fafb" : "#111827",
-            marginBottom: "16px",
-          }}
-        >
-          Energy Market Overview
-        </div> */}
-
-        {/* Playback Controls */}
+        {/* Main Card Container */}
         <div
           style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "16px",
-            marginBottom: "24px",
-            padding: "12px",
             background: darkMode ? "#1f2937" : "#fff",
-            borderRadius: "8px",
             border: `1px solid ${darkMode ? "#374151" : "#e5e7eb"}`,
+            borderRadius: 12,
+            padding: "20px",
             boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
-            flexWrap: mobileDevice ? "wrap" : "nowrap",
           }}
         >
+          {/* Playback Controls */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "16px",
+              marginBottom: "24px",
+              padding: "12px",
+              background: darkMode ? "#111827" : "#f9fafb",
+              borderRadius: "8px",
+              border: `1px solid ${darkMode ? "#374151" : "#e5e7eb"}`,
+              flexWrap: mobileDevice ? "wrap" : "nowrap",
+            }}
+          >
           <button
             onClick={() => setIsPlaying(!isPlaying)}
             style={{
@@ -337,20 +334,15 @@ export default function HistoricalPage() {
           >
             ({currentMinute + 1} / 1440)
           </span>
-        </div>
+          </div>
 
-        {/* Table Card */}
-        <div
-          style={{
-            background: darkMode ? "#1f2937" : "#fff",
-            border: `1px solid ${darkMode ? "#374151" : "#e5e7eb"}`,
-            borderRadius: 12,
-            padding: "20px",
-            boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
-            marginBottom: "24px",
-            overflowX: "auto",
-          }}
-        >
+          {/* Table Section */}
+          <div
+            style={{
+              marginBottom: "24px",
+              overflowX: "auto",
+            }}
+          >
           <div
             style={{
               display: "flex",
@@ -552,42 +544,42 @@ export default function HistoricalPage() {
               ))}
             </tbody>
           </table>
-        </div>
+          </div>
 
-        {/* Batteries Card */}
-        <div
-          style={{
-            background: darkMode ? "#1f2937" : "#fff",
-            border: `1px solid ${darkMode ? "#374151" : "#e5e7eb"}`,
-            borderRadius: 12,
-            padding: "20px",
-            boxShadow: "0 1px 3px rgba(0,0,0,0.1)",
-          }}
-        >
-          {/* <div
-            style={{
-              fontSize: "20px",
-              fontWeight: 600,
-              color: darkMode ? "#f9fafb" : "#111827",
-              marginBottom: "16px",
-            }}
-          >
-            Energy Levels
-          </div> */}
-
-          {/* Battery Grid */}
+          {/* Batteries Section */}
           <div
             style={{
-              display: "flex",
-              flexDirection: "row",
-              gap: "16px",
-              overflowX: "auto",
-              justifyContent: mobileDevice ? "flex-start" : "space-between",
+              padding: "12px",
+              background: darkMode ? "#111827" : "#f9fafb",
+              borderRadius: "8px",
+              border: `1px solid ${darkMode ? "#374151" : "#e5e7eb"}`,
             }}
           >
-            {cities.map((city) => (
-              <Battery key={city} city={city} level={batteryLevels[city]} />
-            ))}
+            {/* <div
+              style={{
+                fontSize: "20px",
+                fontWeight: 600,
+                color: darkMode ? "#f9fafb" : "#111827",
+                marginBottom: "16px",
+              }}
+            >
+              Energy Levels
+            </div> */}
+
+            {/* Battery Grid */}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                gap: "16px",
+                overflowX: "auto",
+                justifyContent: mobileDevice ? "flex-start" : "space-between",
+              }}
+            >
+              {cities.map((city) => (
+                <Battery key={city} city={city} level={batteryLevels[city]} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

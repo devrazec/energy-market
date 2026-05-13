@@ -21,6 +21,10 @@ npm i -S @mui/icons-material
 npm i -S echarts-for-react
 npm i -S echarts
 
+npm i -S leaflet react-leaflet@next
+
+npm i -S leaflet-draw react-leaflet-draw
+
 npm i -D gh-pages
 
 -- Create Files
