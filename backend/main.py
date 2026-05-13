@@ -391,7 +391,7 @@ if __name__ == "__main__":
     price_data = get_omie_prices()
     
     # Save price data to frontend data folder
-    price_output_path = os.path.join(base_dir, "frontend/src/app/data/maket_price.json")
+    price_output_path = os.path.join(base_dir, "frontend/src/app/data/market_price.json")
     
     with open(price_output_path, 'w', encoding='utf-8') as f:
         json.dump(price_data, f, indent=2, ensure_ascii=False)
