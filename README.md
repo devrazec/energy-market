@@ -4,6 +4,11 @@ A real-time energy market visualization platform that displays electricity price
 
 ![Energy Market Simulator](frontend/public/pic1.jpg)
 
+## 🔗 Links
+
+- **Live Demo**: [https://devrazec.github.io/energy-market](https://devrazec.github.io/energy-market)
+- **Repository**: [https://github.com/devrazec/energy-market](https://github.com/devrazec/energy-market)
+
 ## Overview
 
 The Energy Market Simulator is a full-stack web application that provides interactive visualizations of electricity market data for Portugal. It fetches real-time pricing data from OMIE (Operador del Mercado Ibérico de Energía) and generates detailed minute-by-minute price simulations for 8 Portuguese cities, each with regional pricing variations.

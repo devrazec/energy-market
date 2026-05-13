@@ -21,7 +21,6 @@ const navItems = [
     { text: 'Historical', icon: <HistoryIcon />, href: '/pages/Historical' },
     { text: 'Porto Weather', icon: <WbCloudyIcon />, href: '/pages/PortoWeather' },
     { text: 'Market Price', icon: <ShowChartIcon />, href: '/pages/MarketPrice' },
-    { text: 'City Price', icon: <ShowChartIcon />, href: '/pages/CityPrice' },
 ];
 
 export default function Bottom() {
